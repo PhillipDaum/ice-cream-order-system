@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import Form from './components/Form';
+// import Nav from './components/Nav';
+import Kitchen from './pages/Kitchen';
+import Orders from './pages/Orders';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 
 function App() {
@@ -56,13 +60,25 @@ function App() {
 
   return (
     <>
-      {/* header */}
-      <div className="form-container">
-      <h1>Ice Cream Shop</h1>
-      <h2>Fill out the form to place your ice cream order!</h2>
-       <Form change={handleChange} submit={handleSubmit} formData={formData} />
-      </div>
-
+      {/* header/Nav - first build here, then move to component */}
+      <header>
+                <h1>Ice Cream Shop</h1>
+                <nav>
+                    <ul className="nav">
+                        {/* these will be the react router stuff */}
+                        <li>
+                         <Link to="/">Orders</Link>
+                        </li>
+                        <li>
+                            <Link to="/kitchen">Kitchen</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Orders handleChange={handleChange} handleSubmit={handleSubmit} formData={formData}/>} />
+                    <Route path="/Kitchen" element={<Kitchen />} />
+                </Routes>
+            </header>
     </>
   )
 }

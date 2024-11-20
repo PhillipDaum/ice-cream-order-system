@@ -1,29 +1,29 @@
 import './Form.css'
-function Form({ change, submit, formData }) {
+function Form({ handleChange, handleSubmit, formData }) {
 
 
     return (
         <>
-            <form id="form" onSubmit={submit}>
+            <form id="form" onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>User Info</legend>
                     <div className="grid-switch">
                         <label htmlFor="name">Name*:</label>
-                        <input type="text" id="name" name="name" value={formData.name} onChange={change} required />
+                        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div className="grid-switch">
                         <label htmlFor="email">Email*:</label>
-                        <input type="email" id="email" name="email" value={formData.email} onChange={change} required />
+                        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
                     </div>
                     <div className="grid-switch">
                         <label htmlFor="phone">Phone*:</label>
                         {/* <!--  can add pattern, etc later --> */}
-                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={change} required />
+                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                     </div>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="icecream-flavor">Ice Cream Flavor</label>
-                    <select id="icecream-flavor" name="flavor" value={formData.flavor} onChange={change}>
+                    <select id="icecream-flavor" name="flavor" value={formData.flavor} onChange={handleChange}>
                         <option value="" disabled>--option--</option>
                         <option value="mint chocolate chip">Mint Chocolate Chip</option>
                         <option value="vanilla">Vanilla</option>
@@ -33,26 +33,26 @@ function Form({ change, submit, formData }) {
                 <fieldset>
                     <legend>Cup or Cone?</legend>
                     <div className="radio">
-                        <input type="radio" id="cone" value="cone" name="vessel" checked={formData.vessel === "cone"} onChange={change} />
+                        <input type="radio" id="cone" value="cone" name="vessel" checked={formData.vessel === "cone"} onChange={handleChange} />
                         <label htmlFor="cone" className="cone">Cone</label>
                     </div>
                     <div className="radio">
-                        <input type="radio" id="cup" value="cup" name="vessel" checked={formData.vessel === "cup"} onChange={change} />
+                        <input type="radio" id="cup" value="cup" name="vessel" checked={formData.vessel === "cup"} onChange={handleChange} />
                         <label htmlFor="cup" className="cup">Cup</label>
                     </div>
                 </fieldset>
                 <fieldset className="toppings-flex">
                     <legend>What toppings would you like?</legend>
                     <div>
-                        <input type="checkbox" id="sprinkles" name="toppings" value="sprinkles" checked={formData.toppings.sprinkles == true} onChange={change} />
+                        <input type="checkbox" id="sprinkles" name="toppings" value="sprinkles" checked={formData.toppings.sprinkles == true} onChange={handleChange} />
                         <label htmlFor="sprinkles">Sprinkles</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="nuts" name="toppings" value="nuts" checked={formData.toppings.nuts === true} onChange={change} />
+                        <input type="checkbox" id="nuts" name="toppings" value="nuts" checked={formData.toppings.nuts === true} onChange={handleChange} />
                         <label htmlFor="nuts">Nuts</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="chocolateSauce" name="toppings" value="chocolateSauce" checked={formData.toppings.chocolateSauce === true} onChange={change} />
+                        <input type="checkbox" id="chocolateSauce" name="toppings" value="chocolateSauce" checked={formData.toppings.chocolateSauce === true} onChange={handleChange} />
                         <label htmlFor="chocolateSauce">Chocolate Sauce</label>
                     </div>
                 </fieldset>
