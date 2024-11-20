@@ -4,24 +4,34 @@ import './App.css'
 
 function App() {
 
-
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     flavor: "",
-    // vessel: "",
-    // ketchup: "",
-    // olives: "",
-    // jellybeans: ""
+    vessel: "",
+    toppings: {
+      sprinkles: false,
+      nuts: false,
+      chocolateSauce: false,
+    }
   });
 
   let back = [];
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        toppings: {
+          ...prevFormData.toppings,
+          [value]: checked,
+        },
+      }));
+    } else {
+      setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -29,25 +39,30 @@ function App() {
     let dataObj = formData;
     back.push(dataObj);
     console.log(back)
-    // reset form
-    setFormData({ name: '', email: '', phone: "", flavor: "" });
+    // resets form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      flavor: "",
+      vessel: "",
+      toppings: {
+        sprinkles: false,
+        nuts: false,
+        chocolateSauce: false,
+      }
+    });
   };
-
-  // vessel: "", ketchup: "", olives: "", jellybeans: ""
 
   return (
     <>
-      <Form change={handleChange} submit={handleSubmit} formData={formData} />
+      {/* header */}
+      <div className="form-container">
+      <h1>Ice Cream Shop</h1>
+      <h2>Fill out the form to place your ice cream order!</h2>
+       <Form change={handleChange} submit={handleSubmit} formData={formData} />
+      </div>
 
-      {/* <form id="form" onSubmit={handleSubmit}>
-        <label htmlFor="name">name</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
-        <label htmlFor="email">email</label>
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
-        <label htmlFor="phone">phone</label>
-        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange}/>
-        <button type="submit">clicky</button>
-      </form> */}
     </>
   )
 }
