@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import Form from './components/Form';
-// import Nav from './components/Nav';
-import Kitchen from './pages/Kitchen';
-import Orders from './pages/Orders';
+import Nav from './components/Nav';
+import OrderQueue from './pages/OrderQueue';
+import OrderForm from './pages/OrderForm';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 
 function App() {
 
+  // one ticket for one ice cream
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +21,14 @@ function App() {
     }
   });
 
-  let back = [];
+
+  // Function to remove an order by index
+  const removeOrder = (index) => {
+    setOrders((prevOrders) => prevOrders.filter((_, i) => i !== index));
+  };
+
+  // array of all of the orders
+  const [orders, setOrders] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -40,9 +47,10 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let dataObj = formData;
-    back.push(dataObj);
-    console.log(back)
+    // how do I do this?
+    console.log("formdata", formData)
+    setOrders((prevOrders) => [...prevOrders, formData])
+    console.log(orders)
     // resets form
     setFormData({
       name: "",
@@ -59,27 +67,13 @@ function App() {
   };
 
   return (
-    <>
-      {/* header/Nav - first build here, then move to component */}
-      <header>
-                <h1>Ice Cream Shop</h1>
-                <nav>
-                    <ul className="nav">
-                        {/* these will be the react router stuff */}
-                        <li>
-                         <Link to="/">Orders</Link>
-                        </li>
-                        <li>
-                            <Link to="/kitchen">Kitchen</Link>
-                        </li>
-                    </ul>
-                </nav>
-                <Routes>
-                    <Route path="/" element={<Orders handleChange={handleChange} handleSubmit={handleSubmit} formData={formData}/>} />
-                    <Route path="/Kitchen" element={<Kitchen />} />
-                </Routes>
-            </header>
-    </>
+    <div className='app-container'>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<OrderForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} />} />
+        <Route path="/order-queue" element={<OrderQueue orders={orders} removeOrder={removeOrder}/>} />
+      </Routes>
+    </div>
   )
 }
 

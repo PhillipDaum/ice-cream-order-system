@@ -1,7 +1,7 @@
 import Form from "../components/Form"
 
 // import the stack of orders
-function Orders({handleChange, handleSubmit, formData}) {
+function OrderForm({handleChange, handleSubmit, formData}) {
 
     return (
         <>
@@ -13,4 +13,4 @@ function Orders({handleChange, handleSubmit, formData}) {
     )
 }
 
-export default Orders
+export default OrderForm

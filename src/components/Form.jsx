@@ -1,22 +1,21 @@
 import './Form.css'
 function Form({ handleChange, handleSubmit, formData }) {
 
-
     return (
         <>
             <form id="form" onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>User Info</legend>
                     <div className="grid-switch">
-                        <label htmlFor="name">Name*:</label>
+                        <label htmlFor="name">Name:</label>
                         <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div className="grid-switch">
-                        <label htmlFor="email">Email*:</label>
+                        <label htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
                     </div>
                     <div className="grid-switch">
-                        <label htmlFor="phone">Phone*:</label>
+                        <label htmlFor="phone">Phone:</label>
                         {/* <!--  can add pattern, etc later --> */}
                         <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                     </div>
