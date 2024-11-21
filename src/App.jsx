@@ -69,6 +69,7 @@ function App() {
   return (
     <div className='app-container'>
       <Nav />
+      {/* ask for explanation on this */}
       <Routes>
         <Route path="/" element={<OrderForm handleChange={handleChange} handleSubmit={handleSubmit} formData={formData} />} />
         <Route path="/order-queue" element={<OrderQueue orders={orders} removeOrder={removeOrder}/>} />

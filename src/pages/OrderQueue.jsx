@@ -4,7 +4,8 @@ import './OrderQueue.css'
 function OrderQueue({ orders, removeOrder }) {
 
   return (
-    // order.name .email .phone .flavor .vessel .toppings (all that are true)
+    // Is there going to be a problem because of async? 
+    // cards are alwasy adding 
     <div className='orders-container'>
       {orders.map((order, index) => (
         <div key={index} className='order-card'>
