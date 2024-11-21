@@ -1,3 +1,10 @@
+/* add a specific size to the header */
+header {
+    border-bottom: black .3rem solid;
+}
+header h1 {
+    padding-left: 1rem;
+}
 nav {
     margin-right: 2rem;
 }
@@ -17,4 +24,46 @@ nav ul {
     display: flex;
     gap: 1rem;
     justify-content: center;
+}
+
+/* hamburger menu */
+.hamburger-menu {
+    display: none;
+    padding-right: 1rem;
+}
+.open-menu {
+    max-width: 2.2rem;
+    width: auto;
+    height: auto;
+    padding-bottom: .16rem;
+    cursor: pointer;
+}
+.close-menu {
+    max-width: 2.2rem;
+    width: auto;
+    height: auto;
+    padding-bottom: .16rem;
+    cursor: pointer
+}
+
+/* Media Queries */
+/* add conditions to the nav in here that will help it pop out from the top when it's time */
+@media (max-width: 650px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .nav-desktop {
+        display: none;
+    }
+    .close-menu {
+        display: none;
+    }
+}
+
+/* shows hamburger menu pieces */
+.show {
+    display: block;
+}
+.hide {
+    display: none;
 }

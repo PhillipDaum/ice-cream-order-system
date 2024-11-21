@@ -1,4 +1,5 @@
 import Form from "../components/Form"
+import './OrderForm.css'
 
 // import the stack of orders
 function OrderForm({handleChange, handleSubmit, formData}) {

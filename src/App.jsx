@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Nav from './components/Nav';
 import OrderQueue from './pages/OrderQueue';
 import OrderForm from './pages/OrderForm';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
 function App() {

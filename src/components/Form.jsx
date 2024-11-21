@@ -1,6 +1,8 @@
 import './Form.css'
 function Form({ handleChange, handleSubmit, formData }) {
 
+        // move cup or cone to come first 
+        // also in data object and order queue
     return (
         <>
             <form id="form" onSubmit={handleSubmit}>
