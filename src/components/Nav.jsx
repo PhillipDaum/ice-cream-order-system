@@ -4,7 +4,7 @@ import './Nav.css'
 const toggleSideMenu = () => {
     document.querySelector(".open-menu").classList.toggle("hide");
     document.querySelector(".close-menu").classList.toggle("show");
-    // add code to show side nav
+    document.querySelector(".changing-nav").classList.toggle("show");
 }
 
 function Nav() {
@@ -13,11 +13,10 @@ function Nav() {
             <h1>Ice Cream Shop</h1>
             {/* hidden on desktop */}
             <div className="hamburger-menu" onClick={toggleSideMenu}>
-                {/* each will have an onClick to hide and show the thing */}
                 <img className="open-menu" src="./src/assets/hamburger-menu.svg" alt="three vertical bars button to reveal navigation menu" />
                 <img className="close-menu" src="./src/assets/close-burger.svg" alt=" X button to hide navigation menu" />
             </div>
-            <nav className="nav-desktop">
+            <nav className='changing-nav'>
                 <ul>
                     <li>
                         <Link to="/">Order Form</Link>

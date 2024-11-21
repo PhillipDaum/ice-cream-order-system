@@ -1,6 +1,9 @@
-/* add a specific size to the header */
 header {
     border-bottom: black .3rem solid;
+    height: 3rem; /* fixed height */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 header h1 {
     padding-left: 1rem;
@@ -14,11 +17,6 @@ nav ul {
 }
 nav a {
     text-decoration: none;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
 }
 nav ul {
     display: flex;
@@ -47,14 +45,30 @@ nav ul {
 }
 
 /* Media Queries */
-/* add conditions to the nav in here that will help it pop out from the top when it's time */
+/* I kinda wanna switch it so all of the media queries and stuff are mobile first  */
 @media (max-width: 650px) {
     .hamburger-menu {
         display: flex;
     }
-    .nav-desktop {
+    .changing-nav {
+        margin: 0;
+        position: absolute; /* Allows precise placement */
+        right: 0; /* Align to the right edge */
+        border-bottom: black .3rem solid;
+        border-left: black .3rem solid;
+        border-radius: 0rem 0rem 0rem .8rem; /* only bottom left corner rounded */
+        background: var(--bg-primary);
         display: none;
+        top: 3.3rem; /* underneath 3rem header with .3rem bottom border */
+        width: 50%;
+        height: 5rem;
+        padding: 0;
     }
+    .changing-nav ul {
+        display: flex;
+        flex-direction: column;
+        padding-top: .6rem;
+      }
     .close-menu {
         display: none;
     }
