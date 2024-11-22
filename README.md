@@ -68,3 +68,4 @@ src/
 ├── App.jsx              // Main application logic (start here ⭐)
 ├── main.jsx             // Application entry point
 
+
