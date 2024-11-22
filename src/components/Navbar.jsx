@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import './Nav.css'
+import './Navbar.css'
+
+// requires 'hamburger' menu images from assets
+// relies on react-router-dom, install with npm
+// see changes to main.jsx
+// routes in App.jsx
 
 const toggleSideMenu = () => {
     document.querySelector(".open-menu").classList.toggle("hide");
@@ -7,7 +12,7 @@ const toggleSideMenu = () => {
     document.querySelector(".changing-nav").classList.toggle("show");
 }
 
-function Nav() {
+function Navbar() {
     return (
         <header>
             <h1>Ice Cream Shop</h1>
@@ -30,4 +35,4 @@ function Nav() {
     )
 }
 
-export default Nav
+export default Navbar

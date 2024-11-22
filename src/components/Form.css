@@ -38,6 +38,7 @@ input {
 	display: inline-block;
 	color: var(--bg-form);
 	padding: 0.7rem;
+	font-size: 1rem;
 	border: none;
 	margin: auto;
 	border-radius: 0.5rem;

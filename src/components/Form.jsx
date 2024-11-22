@@ -17,7 +17,7 @@ function Form({ handleChange, handleSubmit, formData }) {
                     <div className="grid-switch">
                         <label htmlFor="phone">Phone:</label>
                         {/* <!--  can add pattern, etc later --> */}
-                        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-4567-8901" value={formData.phone} onChange={handleChange} required />
                     </div>
                 </fieldset>
                 <fieldset>

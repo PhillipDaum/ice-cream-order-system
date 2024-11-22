@@ -1,24 +1,14 @@
-/* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Paytone+One&family=Tenor+Sans&display=swap");
-
-/* colors */
-:root {
-	--bg-primary: #f4e8d8;
-	--font-headers: "Paytone One", sans-serif;
-	--font-body: "Tenor Sans";
-	--h1: #8a23ff;
-	--h2: #f123ff;
+/* facilitates sticky footer */
+.app-container {
+    position: absolute;
+    min-height: 100%;
+	width: 100%;
+}
+.content-wrap {
+    padding-bottom: 2.5rem;
 }
 
-body {
-	background-color: var(--bg-primary);
-	font-family: var(--font-body);
-}
-.form-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+/* headings */
 h1 {
 	font-family: var(--font-headers);
 	color: var(--h1);

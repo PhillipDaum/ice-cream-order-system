@@ -9,8 +9,39 @@
 }
 .order-card {
     border: black .2rem solid;
+    font-size: 1.4rem;
     border-radius: .2rem;
     padding: 1rem;
     margin-bottom: 1rem;
     background-color: var(--bg-order-card);
+    display: flex;
+    flex-direction: column;
+}
+.order-card-flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+.order-card-user-info {
+    border: grey dashed .1rem;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+.order-card-order {
+    border: grey dashed .1rem;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+/* button */
+.remove-order {
+    margin: auto;
+    margin-top: 1rem;
+    padding: .6rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 650px) {
+    .order-card-flex-container {
+       flex-direction: column;
+       gap: .6rem;
+    }
 }

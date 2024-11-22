@@ -1,6 +1,6 @@
 header {
     border-bottom: black .3rem solid;
-    height: 3rem; /* fixed height */
+    height: 3rem; /* fixed height; maybe better in pixels? */
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -50,7 +50,7 @@ li {
 }
 
 /* Media Queries */
-/* I kinda wanna switch it so all of the media queries and stuff are mobile first  */
+/* kinda wanna switch it so all of the media queries and stuff are mobile first  */
 @media (max-width: 650px) {
     .hamburger-menu {
         display: flex;
