@@ -10,11 +10,16 @@ form {
 	padding: 3rem;
 	color: var(--text-form);
 	border-radius: 1rem;
-	max-width: 800px;
+	width: 30rem;
 }
 input {
 	border: none;
 	border-radius: 0.2rem;
+}
+.user-info-field {
+	display: flex;
+	flex-direction: column;
+	gap: .8rem;
 }
 .toppings-flex {
 	display: flex;
@@ -29,20 +34,25 @@ input {
 	grid-template-columns: 1fr 2fr;
 	gap: .8rem;
 }
-#submit-button {
+.submit-button {
 	display: inline-block;
 	color: var(--bg-form);
 	padding: 0.7rem;
 	border: none;
 	margin: auto;
 	border-radius: 0.5rem;
+	cursor: pointer;
 }
-#icecream-flavor {
+.icecream-flavor {
 	width: 100%;
 }
-@media (max-width: 500px) {
+@media (max-width: 650px) {
 	.grid-switch {
 		grid-template-columns: 1fr;
 		gap: .2rem;
+	}
+	form {
+		width: auto;
+		margin: 1rem;
 	}
 }

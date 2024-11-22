@@ -23,6 +23,11 @@ nav ul {
     gap: 1rem;
     justify-content: center;
 }
+/* nav links */
+li {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
 /* hamburger menu */
 .hamburger-menu {

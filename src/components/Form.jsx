@@ -1,12 +1,10 @@
 import './Form.css'
 function Form({ handleChange, handleSubmit, formData }) {
 
-        // move cup or cone to come first 
-        // also in data object and order queue
     return (
         <>
             <form id="form" onSubmit={handleSubmit}>
-                <fieldset>
+                <fieldset className='user-info-field'>
                     <legend>User Info</legend>
                     <div className="grid-switch">
                         <label htmlFor="name">Name:</label>
@@ -24,7 +22,7 @@ function Form({ handleChange, handleSubmit, formData }) {
                 </fieldset>
                 <fieldset>
                     <label htmlFor="icecream-flavor">Ice Cream Flavor</label>
-                    <select id="icecream-flavor" name="flavor" value={formData.flavor} onChange={handleChange}>
+                    <select id="icecream-flavor" className='icecream-flavor' name="flavor" value={formData.flavor} onChange={handleChange}>
                         <option value="" disabled>--option--</option>
                         <option value="mint chocolate chip">Mint Chocolate Chip</option>
                         <option value="vanilla">Vanilla</option>
@@ -57,7 +55,7 @@ function Form({ handleChange, handleSubmit, formData }) {
                         <label htmlFor="chocolateSauce">Chocolate Sauce</label>
                     </div>
                 </fieldset>
-                <button type="submit" id="submit-button">Place Order</button>
+                <button type="submit" className="submit-button" id="submit-button">Place Order</button>
             </form>
         </>
     )
